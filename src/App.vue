@@ -3,10 +3,10 @@
 
     <nav>
       <router-link to="/">Accueil</router-link> |
-      <router-link to="/new">News</router-link> |
+      <router-link to="/news">News</router-link> |
       <router-link to="/artistes">Artistes</router-link> |
       <router-link to="/concerts">Concerts</router-link> |
-      <router-link to="/releases">Releases</router-link> |
+      <router-link to="/sorties">Sorties</router-link>
       </nav>
     <router-view/>
   </div>

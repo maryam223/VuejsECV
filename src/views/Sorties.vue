@@ -1,0 +1,60 @@
+<template>
+  <div class="sorties">
+    <h1>Sorties albums</h1>
+    <div class="albums-container">
+      <div 
+      v-for="album in albums"
+      :key="album.id">
+      <router-link :to="{ name: 'album', params: { id: album.id }}">
+      <div class="albums-box">
+        <img :src=" album.cover" alt="cover" width="200px">
+        <div>
+        <h3>{{ album.name}}</h3>
+        <div>
+          <p>{{ album.tracks }} titres - {{ album.released}} </p>
+        </div>
+        </div>
+        </div>
+        </router-link>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from 'axios'
+export default {
+    name: 'Sorties',
+    components: {},
+    mounted(){
+      axios
+      .get('http://localhost:3000/albums')
+      .then((response) => {
+        this.albums = response.data;
+      console.log(this.albums)
+      });
+    },
+    data(){
+      return {
+       albums: []
+      }
+    }
+}
+</script>
+
+<style>
+.albums-box{
+  border: solid 1px black;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+}
+
+img{
+  padding: 10px;
+}
+</style>

@@ -2,8 +2,9 @@
     <div>
         <img :src="article.thumbnail" alt="thumbnail" >
         <h1>{{ article.name }}</h1>
-        <div v-html="article.description">
-            {{ article.description}}
+        <p>{{ article.published }}</p>
+        <div>
+            {{ article.content}}
         </div>
     </div>
 </template>

@@ -1,18 +1,5 @@
 <template>
-  <div class="accueil">
-    <h1>Sorties Albums</h1>
-    <div class="albums-container">
-      <div 
-      v-for="album in albums"
-      :key="album.id">
-      <router-link :to="{ name: 'album', params: { id: album.id }}">
-      <div class="album-box">
-        <img :src=" album.cover" alt="cover" width="150px">
-        <h3>{{ album.name}}</h3>
-      </div>
-      </router-link>
-      </div>
-    </div>
+  <div class="News">
     <h1>News</h1>
     <div class="news-container">
       <div 
@@ -31,14 +18,16 @@
         </router-link>
       </div>
     </div>
+    
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 export default {
-    name: 'Accueil',
-    components:{},
+    name: 'News',
+    components: {
+    },
     mounted(){
       axios
       .get('http://localhost:3000/news')
@@ -46,23 +35,17 @@ export default {
         this.news = response.data;
       console.log(this.news)
       });
-      axios
-      .get('http://localhost:3000/albums')
-      .then((response) => {
-        this.albums = response.data;
-      console.log(this.albums)
-      });
     },
     data(){
       return {
        // news: this.$store.state.news
        news: [],
-       albums: []
       }
     }
 }
 </script>
-<style scoped>
+
+<style>
 .news-box{
   border: solid 1px black;
   border-radius: 10px;
@@ -72,11 +55,6 @@ export default {
   text-align: left;
   display: flex;
   justify-content: flex-start;
-}
-
-.albums-container {
-    display: inline-flex;
-    justify-content: space-around;
 }
 
 img{
