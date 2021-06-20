@@ -1,4 +1,4 @@
-# musicapp
+# La Source
 
 ## Project setup
 ```

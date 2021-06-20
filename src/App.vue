@@ -1,36 +1,61 @@
 <template>
-  <div id="app">
+  <v-app>
+    <v-app-bar
+      app
+      color="#a29bfe"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Logo La Source"
+          class="shrink mr-2"
+          contain
+          src="@/assets/logo.png"
+          transition="scale-transition"
+          width="40"
+        />
+        La Source
+      </div>
 
-    <nav>
-      <router-link to="/">Accueil</router-link> |
-      <router-link to="/news">News</router-link> |
-      <router-link to="/artistes">Artistes</router-link> |
-      <router-link to="/concerts">Concerts</router-link> |
-      <router-link to="/sorties">Sorties</router-link>
+      <v-spacer></v-spacer>
+
+      <nav>
+      <v-btn color="transparent" to="/">Accueil</v-btn> 
+      <v-btn color="transparent" to="/news">News</v-btn> 
+      <v-btn color="transparent" to="/artistes">Artistes</v-btn>
+      <v-btn color="transparent" to="/concerts">Concerts</v-btn> 
+      <v-btn color="transparent" to="/sorties">Sorties</v-btn>
       </nav>
-    <router-view/>
-  </div>
+
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Login</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
+<script>
+
+export default {
+  name: 'App',
+
+  data: () => ({
+    //
+  }),
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+nav{
+  margin-right: 16%;
 }
 </style>

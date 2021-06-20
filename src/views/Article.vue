@@ -11,6 +11,9 @@
 
 <script>
 export default {
+     mounted(){
+      this.$store.dispatch('getNews');
+    },
     computed: {
         article(){
             return this.$store.state.news.find(article => article.id == this.$route.params.id);

@@ -13,9 +13,12 @@
 
 <script>
 export default {
+     mounted(){
+      this.$store.dispatch('getArtistes');
+    },
     computed: {
         artiste(){
-            return this.$store.state.artists.find(artiste => artiste.id == this.$route.params.id);
+            return this.$store.state.artistes.find(artiste => artiste.id == this.$route.params.id);
         }
     }
 }

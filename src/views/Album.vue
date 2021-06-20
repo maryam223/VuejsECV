@@ -17,6 +17,9 @@
 
 <script>
 export default {
+     mounted(){
+      this.$store.dispatch('getAlbums');
+    },
     computed: {
         album(){
             return this.$store.state.albums.find(album => album.id == this.$route.params.id);

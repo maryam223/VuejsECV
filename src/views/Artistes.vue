@@ -3,13 +3,13 @@
     <h1>Artistes</h1>
     <div class="artists-container">
       <div 
-      v-for="artist in artists"
-      :key="artist.id">
-      <router-link :to="{ name: 'artiste', params: { id: artist.id }}">
+      v-for="artiste in artistes"
+      :key="artiste.id">
+      <router-link :to="{ name: 'artiste', params: { id: artiste.id }}">
       <div class="artists-box">
-        <img :src=" artist.avatar" alt="photo artiste" width="100px">
+        <img :src=" artiste.avatar" alt="photo artiste" width="100px">
         <div>
-        <h3>{{ artist.name}}</h3>
+        <h3>{{ artiste.name}}</h3>
         </div>
         </div>
         </router-link>
@@ -19,23 +19,21 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
     name: 'Artistes',
     components:{},
-    mounted(){
-      axios
-      .get('http://localhost:3000/artists')
-      .then((response) => {
-        this.artists = response.data;
-      console.log(this.artists)
-      });
-      
-    },
     data(){
       return {
-       artists: [],
+       //artists: [],
       }
+    },
+    mounted(){
+      this.$store.dispatch('getArtistes');
+    },
+    computed: {
+        artistes() {
+             return this.$store.state.artistes
+        }
     }
 }
 </script>

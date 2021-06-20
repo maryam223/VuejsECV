@@ -7,11 +7,13 @@ import News from '../views/News.vue'
 import Artistes from '../views/Artistes.vue'
 import Concerts from '../views/Concerts.vue'
 import Sorties from '../views/Sorties.vue'
-import EllaMai from '../views/EllaMai.vue'
-import Ari from '../views/Ari.vue'
 import Artiste from '../views/Artiste.vue'
 import Article from '../views/Article.vue'
 import Album from '../views/Album.vue'
+import Genres from '../views/Genres.vue'
+import Genre from '../views/Genre.vue'
+import ArticleCreate from '../views/ArticleCreate.vue'
+
 
 
 Vue.use(VueRouter)
@@ -57,11 +59,6 @@ const routes = [
         component: Sorties
     },
     {
-        path: '/ellamai',
-        name: 'EllaMai',
-        component: EllaMai
-    },
-    {
         path: '/inscription',
         name: 'Inscription',
         component: Inscription
@@ -72,15 +69,15 @@ const routes = [
         component: Connexion
     },
     {
-        path: '/ari',
-        name: 'Ari',
-        component: Ari
-    },
-    {
         path: '/artiste/:id',
         name: 'artiste',
         component: Artiste,
         params: true
+    },
+    {
+        path: '/article/new',
+        name: 'article-create',
+        component: ArticleCreate
     },
     {
         path: '/article/:id',
@@ -93,6 +90,17 @@ const routes = [
         name: 'album',
         component: Album,
         params: true
+    },
+    {
+        path: '/genre/:id',
+        name: 'genre',
+        component: Genre,
+        params: true
+    },
+    {
+        path: '/genres',
+        name: 'Genres',
+        component: Genres
     }
 
 ]

@@ -22,22 +22,21 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
     name: 'Sorties',
     components: {},
-    mounted(){
-      axios
-      .get('http://localhost:3000/albums')
-      .then((response) => {
-        this.albums = response.data;
-      console.log(this.albums)
-      });
-    },
     data(){
       return {
-       albums: []
+       //albums: []
       }
+    },
+    mounted(){
+      this.$store.dispatch('getAlbums');
+    },
+    computed: {
+        albums() {
+             return this.$store.state.albums
+        }
     }
 }
 </script>

@@ -5,7 +5,7 @@
       <div 
       v-for="article in news"
       :key="article.id">
-      <router-link :to="{ name: 'article', params: { id: article.id }}">
+      <v-card width="800px" hover outlined class="ma-2" :to="{ name: 'article', params: { id: article.id }}">
       <div class="news-box">
         <img :src=" article.thumbnail" alt="thumbnail" width="200px">
         <div>
@@ -13,9 +13,11 @@
         <div v-html="article.description">
           {{ article.description  }}
         </div>
+        <v-btn rounded color="#6c5ce7" class="white--text" >Lire l'article ></v-btn>
+
         </div>
         </div>
-        </router-link>
+      </v-card>
       </div>
     </div>
     
@@ -23,31 +25,34 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
     name: 'News',
     components: {
     },
-    mounted(){
-      axios
-      .get('http://localhost:3000/news')
-      .then((response) => {
-        this.news = response.data;
-      console.log(this.news)
-      });
-    },
     data(){
       return {
        // news: this.$store.state.news
-       news: [],
+       //news: [],
       }
+    },
+    mounted(){
+      this.$store.dispatch('getNews');
+    },
+    computed: {
+        news() {
+             return this.$store.state.news
+        }
     }
 }
 </script>
 
 <style>
+
+.news-container{
+  display: grid;
+  place-items: center;
+}
 .news-box{
-  border: solid 1px black;
   border-radius: 10px;
   margin: 10px;
   padding: 10px;
