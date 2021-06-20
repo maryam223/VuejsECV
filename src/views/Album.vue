@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <img style="display: grid; place-items: center;" :src="album.cover" alt="cover" >
+    <div class="text-center">
+        <img :src="album.cover" alt="cover" >
         <h1 class="display-3 ma-4 d-flex justify-center">{{ album.name }}</h1>
         <div>
             <h4 class="display-5 ma-4 d-flex justify-center">Nombre de titres : {{ album.tracks }}</h4>

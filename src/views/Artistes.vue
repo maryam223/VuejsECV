@@ -1,5 +1,5 @@
 <template>
-  <div class="artistes">
+  <div class="text-center">
     <h1 class="display-3 ma-4 d-flex justify-center">Artistes</h1>
     <div class="artists-container">
       <div 
@@ -7,7 +7,7 @@
       :key="artiste.id">
       <router-link :to="{ name: 'artiste', params: { id: artiste.id }}">
       <div class="artists-box">
-        <img :src=" artiste.avatar" alt="photo artiste" width="100px">
+        <img :src=" artiste.avatar" alt="photo artiste" width="150px">
         <div>
         <h3>{{ artiste.name}}</h3>
         </div>

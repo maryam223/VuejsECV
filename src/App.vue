@@ -43,6 +43,16 @@
     <v-main>
       <router-view/>
     </v-main>
+    <template>
+  <v-footer padless>
+    <v-col
+      class="text-center"
+      cols="12"
+    >
+      {{ new Date().getFullYear() }} — <strong>TRAORE Maryam - ECV Digital</strong>
+    </v-col>
+  </v-footer>
+</template>
   </v-app>
 </template>
 
@@ -64,4 +74,5 @@ export default {
 nav{
   margin-right: 16%;
 }
+
 </style>

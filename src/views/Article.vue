@@ -1,9 +1,9 @@
 <template>
-    <div>
+    <div class="text-center">
         <img :src="article.thumbnail" alt="thumbnail" >
         <h1 class="display-3 ma-4 d-flex justify-center">{{ article.name }}</h1>
         <p>{{ article.published }}</p>
-        <div>
+        <div v-html="article.content">
             {{ article.content}}
         </div>
     </div>

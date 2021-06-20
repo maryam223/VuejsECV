@@ -1,14 +1,14 @@
 <template>
-  <div class="accueil">
-    <h1 class="display-3 ma-4 d-flex justify-center">Sorties Albums</h1>
-    <div class="ma-4 d-flex">
+  <div class="text-center">
+    <h1 class="display-3 ma-4  justify-center">Sorties Albums</h1>
+    <div class="ma-4" style="display: inline-flex;">
       <div 
       v-for="album in albums"
       :key="album.id">
       <router-link :to="{ name: 'album', params: { id: album.id }}">
       <div class="album-box">
         <img :src=" album.cover" alt="cover" width="150px">
-        <h3>{{ album.name}}</h3>
+        <h3 class="text-caption text-decoration-none black--text">{{ album.name}}</h3>
       </div>
       </router-link>
       </div>
