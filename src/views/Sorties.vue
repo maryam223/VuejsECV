@@ -1,6 +1,6 @@
 <template>
   <div class="sorties">
-    <h1>Sorties albums</h1>
+    <h1 class="display-3 ma-4 d-flex justify-center">Sorties albums</h1>
     <div class="albums-container">
       <div 
       v-for="album in albums"

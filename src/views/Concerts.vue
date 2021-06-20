@@ -1,6 +1,6 @@
 <template>
   <div class="concerts">
-    <h1>Concerts</h1>
+    <h1 class="display-3 ma-4 d-flex justify-center">Concerts</h1>
     <div class="concert-container">
       <ul
       v-for="concert in concerts"

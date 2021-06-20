@@ -1,9 +1,9 @@
 <template>
     <div>
-        <img :src="album.cover" alt="cover" >
-        <h1>{{ album.name }}</h1>
+        <img style="display: grid; place-items: center;" :src="album.cover" alt="cover" >
+        <h1 class="display-3 ma-4 d-flex justify-center">{{ album.name }}</h1>
         <div>
-            <h4>Nombre de titres : {{ album.tracks }}</h4>
+            <h4 class="display-5 ma-4 d-flex justify-center">Nombre de titres : {{ album.tracks }}</h4>
             <ul 
             v-for="titre in album.titre"
             :key="titre">

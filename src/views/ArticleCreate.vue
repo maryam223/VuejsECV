@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col md="3" cols="12">
-        <h1>Créer un nouvel article</h1>
+        <h1 class="display-3 ma-4 d-flex justify-center">Créer un nouvel article</h1>
         <div class="field">
           <label for="name">Name</label>
           <input type="text" id="name" v-model="article.name" />

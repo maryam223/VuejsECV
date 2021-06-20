@@ -1,6 +1,6 @@
 <template>
   <div class="News">
-    <h1>News</h1>
+    <h1 class="display-3 ma-4 d-flex justify-center">News</h1>
     <div class="news-container">
       <div 
       v-for="article in news"

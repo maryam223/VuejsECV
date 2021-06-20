@@ -1,7 +1,7 @@
 <template>
     <div>
         <img :src="article.thumbnail" alt="thumbnail" >
-        <h1>{{ article.name }}</h1>
+        <h1 class="display-3 ma-4 d-flex justify-center">{{ article.name }}</h1>
         <p>{{ article.published }}</p>
         <div>
             {{ article.content}}

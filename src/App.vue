@@ -27,12 +27,15 @@
       <v-btn color="transparent" to="/sorties">Sorties</v-btn>
       </nav>
 
+      <v-flex>
+        <Popup />
+      </v-flex>
+
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
+        to="/inscription"
         text
       >
-        <span class="mr-2">Login</span>
+        <span class="mr-2">S'inscrire</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
@@ -45,9 +48,12 @@
 
 <script>
 
+import Popup from '@/components/Popup.vue'
 export default {
   name: 'App',
-
+  components:{
+    Popup
+  },
   data: () => ({
     //
   }),

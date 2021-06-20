@@ -1,6 +1,6 @@
 <template>
   <div class="artistes">
-    <h1>Artistes</h1>
+    <h1 class="display-3 ma-4 d-flex justify-center">Artistes</h1>
     <div class="artists-container">
       <div 
       v-for="artiste in artistes"

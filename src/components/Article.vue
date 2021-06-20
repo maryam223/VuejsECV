@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ title }}</h1>
+    <h1 class="display-3 ma-4 d-flex justify-center">{{ title }}</h1>
     <img :src="image.source" :alt="image.alt">
     <article>
       <p>{{ contenu }}</p>

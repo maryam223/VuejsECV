@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>{{ artiste.name }}</h1>
+        <h1 class="display-3 ma-4 d-flex justify-center">{{ artiste.name }}</h1>
         <p>{{ artiste.likes }} likes</p>
         <img :src="artiste.avatar" alt="photo artiste">
         <div>
